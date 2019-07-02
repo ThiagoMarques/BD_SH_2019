@@ -2,7 +2,6 @@
 
 CRUD Sistema Hospitalar
 
-
 Softwares utilizados:
 
 - Sistema Operacional Linux de 64 bits
