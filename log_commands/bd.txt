@@ -1,0 +1,2 @@
+CREATE DATABASE bd_hospital;
+CREATE TABLE usuario ( id int NOT NULL AUTO_INCREMENT, matricula int NOT NULL, senha int NOT NULL, PRIMARY KEY (id) )default charset = utf8
