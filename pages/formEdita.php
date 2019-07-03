@@ -54,6 +54,6 @@
             </form>
         </fieldset>
         <hr>
-        <a href="index.php"><button>Voltar</button></a>
+        <a href="/BD_SH_2019/principal.php"><button>Voltar</button></a>
     </body>
 </html>

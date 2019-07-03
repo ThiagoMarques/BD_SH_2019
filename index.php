@@ -13,7 +13,7 @@ and open the template in the editor.
         <h1>Sistema Web 1.0</h1>
         <fieldset>
             <legend>Efetue o Login</legend>
-            <form method="post" action="autenticar.php">
+            <form method="post" action="/BD_SH_2019/config/autenticar.php">
                 <input type="text" name="matricula" placeholder="Matricula" required>
                 <input type="password" name="senha" placeholder="Senha" required>
                 <input type="submit" value="Entrar">

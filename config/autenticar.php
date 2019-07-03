@@ -40,7 +40,7 @@ $result = mysqli_query($link, $query);
 
 if(mysqli_num_rows($result)) {
     $msg = "<script>alert('Usuário Logado');";
-    $msg .= "location='principal.php' </script>";
+    $msg .= "location='/BD_SH_2019/principal.php' </script>";
     print $msg;
 } else {
     print "Erro ao Logar";
