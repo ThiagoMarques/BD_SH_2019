@@ -13,48 +13,16 @@
 <body>
     <h2>Sistema Hospitalar</h2>
     <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Prontuario</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                            aria-expanded="false">Cadastrar <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Medico</a></li>
-                            <li><a href="#">Enfermeiro</a></li>
-                            <li><a href="#">Administrativo</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="pages/cadastro.php">Geral</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="pages/geral.php">Visualizar Usuarios</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                            aria-expanded="false">Consultas <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Marcar Consulta</a></li>
-                            <li><a href="#">Marcar Retorno</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">Visualizar Consultas</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-    </nav>
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <img src="../images/hospital.png" width="50" height="50">
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
     <!---tela de cadastro de usuários-->
     <table style="width: 80%; margin: 20px auto;">
         <tr Style="background: #333; color: #FFF">
