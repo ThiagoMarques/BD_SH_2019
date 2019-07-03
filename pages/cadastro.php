@@ -26,7 +26,7 @@
                 <td>Ações</td>
             </tr>
             <?php
-                include_once 'conecta.php';
+                include_once '../config/conecta.php';
                 mysqli_select_db($link, "bd_hospital");
                 $query = "SELECT * FROM usuario order by id_Usuario DESC";
                 $result = mysqli_query($link, $query);
@@ -55,6 +55,8 @@
                 }
               ?>
         </table>
+        <hr>
+        <a href="/BD_SH_2019/principal.php"><button>Voltar</button></a>
     </body>
 </html>
 

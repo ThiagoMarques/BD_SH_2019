@@ -36,7 +36,7 @@
                             <li><a href="#">Enfermeiro</a></li>
                             <li><a href="#">Administrativo</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="#">Geral</a></li>
+                            <li><a href="pages/cadastro.php">Geral</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
