@@ -1,12 +1,30 @@
 <!DOCTYPE html>
-
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-    </head>
-    <body>
-        <?php
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login</title>
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="../css/signin.css" rel="stylesheet">
+</head>
+
+<body>
+    <h2>Sistema Hospitalar</h2>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Prontuario</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <!---tela de cadastro de usuários-->
+    <?php
         //pegar o valor do parametro "id"
         $id = filter_input(INPUT_GET, 'id');
         
@@ -53,7 +71,10 @@
                 <input type="submit" value="Atualizar" onclick="return confirm('Confirmar edição do registro?')">
             </form>
         </fieldset>
-        <hr>
-        <a href="/BD_SH_2019/principal.php"><button>Voltar</button></a>
-    </body>
+    <hr>
+    <a href="/BD_SH_2019/principal.php"><button>Voltar</button></a>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
 </html>

@@ -37,6 +37,8 @@
                             <li><a href="#">Administrativo</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="pages/cadastro.php">Geral</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="pages/geral.php">Visualizar Usuarios</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">

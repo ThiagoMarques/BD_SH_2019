@@ -20,16 +20,17 @@ mysqli_select_db($link, "bd_hospital");
  * sintaxe INSERT INTO tabela(campo, campo...) VALUES(v1,v2...)
  */
 
-$query = "INSERT INTO usuario (matricula, nome, senha) VALUES ('$m', '$n', '$s', '$e', '$d', '$x')";
+$query = "INSERT INTO usuario (matricula, nome, senha, email, data_nasc, sex) VALUES ('$m', '$n', '$s', '$e', '$d', '$x')";
 
 /*
  * Verificar se a instrução foi executada
  */
 
 if(mysqli_query($link, $query)) {
-    $msg = "<script>alert('Registro Inserido'); location = 'index.php'</script>";
+    $msg = "<script>alert('Registro Inserido'); location = '../pages/formEdita.php'</script>";
     print $msg;
 } else {
-    print "Dados não inseridos<br>";
+    $msg = "<script>alert('Erro!'); location = '../pages/formEdita.php'</script>";
+    print $msg;
 }
         

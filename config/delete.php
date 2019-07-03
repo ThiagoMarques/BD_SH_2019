@@ -26,7 +26,7 @@
     
     if(mysqli_query($link, $query)) {
         $msg = "<script>alert('Registro Excluído');";
-        $msg .= "location='index.php' </script>";
+        $msg .= "location='../pages/formEdita.php' </script>";
         print $msg;
                 
     }
