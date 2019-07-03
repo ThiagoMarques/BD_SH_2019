@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <h2>Sistema Hospitalar</h2>
+    <h1 style="font-family: 'Amatic SC', cursive; font-size: 50px;">Sistema Hospitalar</h1>
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -55,8 +55,14 @@
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
+    <div class="card">
+        <div class="col-sm-8">
+        <img src="images/init.jpg" class="img-fluid">
+        </div>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
 </body>
 
 </html>
