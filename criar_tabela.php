@@ -16,7 +16,10 @@ $query = "CREATE TABLE usuario(
         ID_Usuario int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
         Matricula varchar(180) NOT NULL,
         Nome varchar(50) NOT NULL,
-        Senha varchar(16) NOT NULL
+        Senha varchar(16) NOT NULL,
+        Email varchar(100) NOT NULL,
+        Data_Nasc DATE,
+        Sex varchar(1)
     );"; 
 
 if(mysqli_query($link, $query)) {

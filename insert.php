@@ -5,9 +5,13 @@ include_once 'conecta.php';
  * Utilizar o método filter_input(METHOD, NOMECAMPO)
  */
 
-$e = filter_input(INPUT_POST, 'matricula');
+$m = filter_input(INPUT_POST, 'matricula');
 $n = filter_input(INPUT_POST, 'nome');
 $s = filter_input(INPUT_POST, 'senha');
+$e = filter_input(INPUT_POST, 'email');
+$d = filter_input(INPUT_POST, 'data_nasc');
+$x = filter_input(INPUT_POST, 'sex');
+
 
 mysqli_select_db($link, "bd_hospital");
 
@@ -16,7 +20,7 @@ mysqli_select_db($link, "bd_hospital");
  * sintaxe INSERT INTO tabela(campo, campo...) VALUES(v1,v2...)
  */
 
-$query = "INSERT INTO usuario (matricula, nome, senha) VALUES ('$e', '$n', '$s')";
+$query = "INSERT INTO usuario (matricula, nome, senha) VALUES ('$m', '$n', '$s', '$e', '$d', '$x')";
 
 /*
  * Verificar se a instrução foi executada
