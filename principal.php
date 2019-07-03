@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <h1 style="font-family: 'Amatic SC', cursive; font-size: 50px;">Sistema Hospitalar</h1>
+    <h1 style="font-family: 'Amatic SC', cursive; font-size: 50px; margin-left: 20px; margin-top: 5px;">Sistema Hospitalar</h1>
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -56,10 +56,16 @@
         </div><!-- /.container-fluid -->
     </nav>
     <div class="card">
-        <div class="col-sm-8">
         <img src="images/init.jpg" class="img-fluid">
-        </div>
     </div>
+    <footer class="page-footer font-small" style="margin-top: 100px;">
+        <div class="container-fluid text-md-left">
+            <p>Banco de Dados 1/2019</p>
+            <p>Thiago Santana Marques 14/0164049</P>
+            <p>Flavio 14/0164049</p>
+            <p>Ricardo 14/0164049</p>
+        </div>
+    </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
