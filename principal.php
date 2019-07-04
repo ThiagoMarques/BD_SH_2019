@@ -32,9 +32,9 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                             aria-expanded="false">Cadastrar <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Medico</a></li>
-                            <li><a href="#">Enfermeiro</a></li>
-                            <li><a href="#">Administrativo</a></li>
+                            <li><a href="pages/cadMed.php">Medico</a></li>
+                            <li><a href="pages/cadEnf.php">Enfermeiro</a></li>
+                            <li><a href="pages/cadAdm.php">Administrativo</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="pages/cadastro.php">Geral</a></li>
                             <li role="separator" class="divider"></li>

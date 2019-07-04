@@ -29,7 +29,7 @@
         $id = filter_input(INPUT_GET, 'id');
         
         //busca conexão com o banco
-        include_once 'conecta.php';
+        include_once '../config/conecta.php';
         mysqli_select_db($link, 'bd_hospital');
         
         //CRIA A INSTRUÇÃO SQL (Consultar um registro);
@@ -41,38 +41,67 @@
         //Armazena o registro em array (assoc)
         $linha = mysqli_fetch_assoc($result);
         ?>
+    <div class="card">
+        <div class="card-body">
+            <div class="col-sm-8">
+                <fieldset>
+                    <legend>Preencha os campos</legend>
+                    <form method="POST" action="../config/insert.php">
+                        <input type="hidden" name="id" value="<?=$linha['ID_Usuario']?>" required>
+                        <div class="form-group">
+                            <label for="matricula">Matricula</label>
+                            <input type="text" class="form-control" name="matricula" id="matricula"
+                            value="<?=$linha['Matricula']?>" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="nome">Nome Completo</label>
+                            <input type="text" class="form-control" name="nome" id="nome" value="<?=$linha['Nome']?>" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="senha">Senha</label>
+                            <input type="password" class="form-control" name="senha" id="senha" value="<?=$linha['Senha']?>" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Endereço de email</label>
+                            <input type="email" class="form-control" name="email" id="email"
+                            value="<?=$linha['Email']?>" required>
+                        </div>
+                        <div>
+                            <div class="form-group">
+                                <label for="data_nasc">Data de Nascimento</label>
+                                <input type="date" class="form-control" name="data_nasc" value="<?=$linha['Data_Nasc']?>" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="sex">Selecione o sexo</label>
+                            <select class="form-control" name="sex" id="sex">
+                                    <?php
+                                    if($linha['Sex'] == 'M') {
+                                        print "<option selected value = 'M'>Masculino</option>";
+                                        print "<option value = 'F'>Feminino</option>";
+                                    }
+                                    
+                                    if($linha['Sex'] == 'F') {
+                                        print "<option selected value = 'F'>Feminino</option>";
+                                        print "<option value = 'M'>Masculino</option>";
+                                    }
+                                ?>
+                            </select>
+                        </div>
+                        <button type="submit" value="Cadastrar" class="btn btn-primary btn-lg btn-block">Editar
+                            Usuario</button>
+                    </form>
+                </fieldset>
+                <hr>
+                <a href="/BD_SH_2019/principal.php"><button class="btn btn-primary">Voltar</button></a>
+            </div>
+        </div>
+    </div>
 
 
 
-    <h1>TELA DE EDIÇÃO</h1>
-    <fieldset>
-        <legend>Edição de Usuário</legend>
-        <form method="POST" action="update.php">
-            <input type="hidden" name="id" value="<?=$linha['ID_Usuario']?>" required>
-            <input type="matricula" name="matricula" placeholder="Matricula" value="<?=$linha['Matricula']?>" required>
-            <input type="text" name="nome" placeholder="Nome" value="<?=$linha['Nome']?>" required>
-            <input type="password" name="senha" placeholder="Senha" value="<?=$linha['Senha']?>" required>
-            <input type="text" name="email" placeholder="Email" value="<?=$linha['Email']?>" required>
-            <input type="date" name="data_nasc" placeholder="" value="<?=$linha['Data_Nasc']?>" required>
-            <select>
-                <option selected disable>Selecione o sexo</option>
-                <?php
-                        if($linha['Sex'] == 'M') {
-                            print "<option selected value = 'M'>Masculino</option>";
-                            print "<option value = 'F'>Feminino</option>";
-                        }
-                        
-                        if($linha['Sex'] == 'F') {
-                            print "<option selected value = 'F'>Feminino</option>";
-                            print "<option value = 'M'>Masculino</option>";
-                        }
-                    ?>
-            </select>
-            <input type="submit" value="Atualizar" onclick="return confirm('Confirmar edição do registro?')">
-        </form>
-    </fieldset>
     <hr>
-    <a href="/BD_SH_2019/principal.php"><button>Voltar</button></a>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
