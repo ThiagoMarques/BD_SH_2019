@@ -11,6 +11,7 @@
 </head>
 
 <body>
+
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -23,55 +24,58 @@
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
+    <!---tela de cadastro de usuários-->
     <div class="card">
-        <div class="card-body">
-            <div class="col-sm-8">
-                <fieldset>
-                    <legend>Preencha os campos</legend>
-                    <form method="POST" action="../config/insert.php">
-                        <div class="form-group">
-                            <label for="matricula">Matricula</label>
-                            <input type="text" class="form-control" name="matricula" id="matricula"
-                                placeholder="Digite a matricula">
-                        </div>
-                        <div class="form-group">
-                            <label for="nome">Nome Completo</label>
-                            <input type="text" class="form-control" name="nome" id="nome" placeholder="Digite o nome">
-                        </div>
-                        <div class="form-group">
-                            <label for="senha">Senha</label>
-                            <input type="password" class="form-control" name="senha" id="senha" placeholder="Senha">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Endereço de email</label>
-                            <input type="email" class="form-control" name="email" id="email"
-                                placeholder="Digite o email">
-                        </div>
-                        <div>
-                            <div class="form-group">
-                                <label for="data_nasc">Data de Nascimento</label>
-                                <input type="date" class="form-control" name="data_nasc" placeholder=""
-                                    value="<?=$linha['Data_Nasc']?>">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="sex">Selecione o sexo</label>
-                            <select class="form-control" name="sex" id="sex">
-                                <option selected disable>Selecione o sexo</option>
-                                <option value='M'>Masculino</option>
-                                <option value='F'>Feminino</option>
-                            </select>
-                        </div>
-                        <button type="submit" value="Cadastrar" class="btn btn-primary btn-lg btn-block">Registrar
-                            Usuario</button>
-                    </form>
-                </fieldset>
-                <hr>
-                <a href="/BD_SH_2019/principal.php"><button class="btn btn-primary">Voltar</button></a>
-            </div>
+        <div class="col-sm8">
+            <h2>Enfermeiros</h2>
+            <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">COREN</td>
+                            <th scope="col">Matrícula</td>
+                            <th scope="col">Nome</td>
+                            <th scope="col">Ações</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+    
+                        <?php
+                                    include_once '../config/conecta.php';
+                                    mysqli_select_db($link, "bd_hospital");
+                                    $query = "SELECT u.ID_Usuario, u.Matricula, u.Nome, m.COREN AS COREN from usuario AS u INNER JOIN enfermeiro AS m ON u.ID_Usuario = m.ID_Enf";
+                                    $result = mysqli_query($link, $query);
+                                    if(mysqli_num_rows($result)){
+                                        while ($linha = mysqli_fetch_assoc($result)){
+                                    ?>
+    
+                        <tr>
+                            <td><?= $linha['COREN'] ?></td>
+                            <td><?= $linha['Matricula'] ?></td>
+                            <td><?= $linha['Nome'] ?></td>
+                            <td>
+                                <a href="insertCOREN.php?id=<?=$linha['ID_Usuario']?>">
+                                    <button class="btn btn-info">Visualizar</button></a>
+                            </td>
+    
+                        </tr>
+    
+                        <?php
+                                    
+                                    }
+                                     } else {
+                                       print "NEHUM REGISTRO ENCONTRADO.";
+                                    }
+                                  ?>
+                    </tbody>
+                </table>
         </div>
     </div>
     <hr>
+    <div class=col-sm-8>
+        <a href="/BD_SH_2019/pages/chooseCOREN.php"><button class="btn btn-primary">Inserir Enfermeiro</button></a>
+        <a href="/BD_SH_2019/principal.php"><button class="btn btn-primary">Voltar</button></a>
+    </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">

@@ -7,6 +7,7 @@ CREATE TABLE medico (
     CONSTRAINT ID_Med UNIQUE (ID_Med)
     );
 
+CREATE TABLE enfermeiro ( ID_Enf int NOT NULL AUTO_INCREMENT, COREN varchar(30) NOT NULL, FOREIGN KEY (ID_Enf) REFERENCES usuario(ID_Usuario), CONSTRAINT ID_Enf UNIQUE (ID_Enf) )
 
 select * from usuario where id_usuario not in (select ID_Med from medico )            
                     
