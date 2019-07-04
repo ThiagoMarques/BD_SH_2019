@@ -32,7 +32,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                             aria-expanded="false">Cadastrar <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="pages/cadMed.php">Medico</a></li>
+                            <li><a href="pages/cadMed.php">Médico</a></li>
                             <li><a href="pages/cadEnf.php">Enfermeiro</a></li>
                             <li><a href="pages/cadAdm.php">Administrativo</a></li>
                             <li role="separator" class="divider"></li>
@@ -58,12 +58,13 @@
     <div class="card">
         <img src="images/init.jpg" class="img-fluid">
     </div>
-    <footer class="page-footer font-small" style="margin-top: 100px;">
+    <footer class="page-footer font-small" style="margin-top: 500px;">
         <div class="container-fluid text-md-left">
             <p>Banco de Dados 1/2019</p>
             <p>Thiago Santana Marques 14/0164049</P>
             <p>Flavio 14/0164049</p>
             <p>Ricardo 14/0164049</p>
+            <p>Victor 14/0164049</p>
         </div>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

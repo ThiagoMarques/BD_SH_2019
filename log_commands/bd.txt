@@ -6,5 +6,7 @@ CREATE TABLE medico (
     FOREIGN KEY (ID_Med) REFERENCES usuario(ID_Usuario),
     CONSTRAINT ID_Med UNIQUE (ID_Med)
     );
-                    
+
+
+select * from usuario where id_usuario not in (select ID_Med from medico )            
                     

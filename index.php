@@ -20,7 +20,7 @@ and open the template in the editor.
 
         <form class="form-signin" method="post" action="/BD_SH_2019/config/autenticar.php">
             <h2 class="form-signin-heading">Sistema Hospitalar</h2>
-            <label for="matricula" class="sr-only">Matricula</label>
+            <label for="matricula" class="sr-only">Matrícula</label>
             <input type="text" name="matricula" id="matricula" class="form-control" placeholder="Insira sua matricula"
                 required autofocus>
             <label for="senha" class="sr-only">Senha</label>

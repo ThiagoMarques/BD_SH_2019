@@ -33,21 +33,29 @@
         mysqli_select_db($link, 'bd_hospital');
         
         //CRIA A INSTRUÇÃO SQL (Consultar um registro);
+        $query_med = "SELECT * FROM medico WHERE ID_Med = '$id'";
         $query = "SELECT * FROM usuario WHERE ID_Usuario = '$id'";
-        
+            
         //executa a instrução SQL
         $result = mysqli_query($link, $query);
+        $result_med = mysqli_query($link, $query_med);
         
         //Armazena o registro em array (assoc)
         $linha = mysqli_fetch_assoc($result);
+        $linha_med = mysqli_fetch_assoc($result_med);
         ?>
     <div class="card">
         <div class="card-body">
             <div class="col-sm-8">
                 <fieldset>
                     <legend>Preencha os campos</legend>
-                    <form method="POST" action="../config/update.php">
+                    <form method="POST" action="../config/insert_med.php">
                         <input type="hidden" name="id" value="<?=$linha['ID_Usuario']?>" required>
+                        <div class="form-group">
+                            <label for="matricula">CRM</label>
+                            <input type="text" class="form-control" name="crm" id="crm"
+                            value="<?=$linha_med['CRM']?>" required>
+                        </div>
                         <div class="form-group">
                             <label for="matricula">Matrícula</label>
                             <input type="text" class="form-control" name="matricula" id="matricula"

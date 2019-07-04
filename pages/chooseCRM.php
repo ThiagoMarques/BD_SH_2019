@@ -11,7 +11,6 @@
 </head>
 
 <body>
-
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -25,16 +24,35 @@
         </div><!-- /.container-fluid -->
     </nav>
     <!---tela de cadastro de usuários-->
+    <?php
+        //pegar o valor do parametro "id"
+        $id = filter_input(INPUT_GET, 'id');
+        
+        //busca conexão com o banco
+        include_once '../config/conecta.php';
+        mysqli_select_db($link, 'bd_hospital');
+        
+        //CRIA A INSTRUÇÃO SQL (Consultar um registro);
+        $query_med = "SELECT * FROM medico WHERE ID_Med = '$id'";
+        $query = "SELECT * FROM usuario WHERE ID_Usuario = '$id'";
+            
+        //executa a instrução SQL
+        $result = mysqli_query($link, $query);
+        $result_med = mysqli_query($link, $query_med);
+        
+        //Armazena o registro em array (assoc)
+        $linha = mysqli_fetch_assoc($result);
+        $linha_med = mysqli_fetch_assoc($result_med);
+        ?>
     <div class="card">
-        <div class="col-sm8">
+        <div class="card-body">
+            <div class="col-sm-8">
+            <h2>Usuários do Sistema</h2>
             <table class="table">
                 <thead>
                     <tr>
                         <th scope="col">Matrícula</td>
-                        <th scope="col">Senha</td>
-                        <th scope="col">E-mail</td>
-                        <th scope="col">Data Nascimento</td>
-                        <th scope="col">Sexo</td>
+                        <th scope="col">Nome</td>
                         <th scope="col">Ações</td>
                     </tr>
                 </thead>
@@ -43,7 +61,7 @@
                     <?php
                                 include_once '../config/conecta.php';
                                 mysqli_select_db($link, "bd_hospital");
-                                $query = "SELECT * FROM usuario order by id_Usuario DESC";
+                                $query = "SELECT * FROM usuario WHERE id_usuario NOT IN (SELECT ID_Med FROM medico)";
                                 $result = mysqli_query($link, $query);
                                 if(mysqli_num_rows($result)){
                                    while ($linha = mysqli_fetch_assoc($result)){
@@ -51,18 +69,10 @@
 
                     <tr>
                         <td><?= $linha['Matricula'] ?></td>
-                        <td><?= $linha['Senha'] ?></td>
-                        <td><?= $linha['Email'] ?></td>
-                        <td><?= $linha['Data_Nasc'] ?></td>
-                        <td><?= $linha['Sex'] ?></td>
+                        <td><?= $linha['Nome'] ?></td>
                         <td>
-                            <a href="../config/delete.php?id=<?=$linha['ID_Usuario']?>">
-                                <button class="btn btn-info"
-                                    onclick="return confirm('Confirmar exclusão do registro?')">Excluir</button></a>
-
-                            <a href="formEdita.php?id=<?=$linha['ID_Usuario']?>">
-                                <button class="btn btn-info">Editar</button></a>
-
+                            <a href="insertCRM.php?id=<?=$linha['ID_Usuario']?>">
+                                <button class="btn btn-info">Selecionar</button></a>
                         </td>
 
                     </tr>
@@ -75,13 +85,16 @@
                               ?>
                 </tbody>
             </table>
+                <hr>
+                <a href="/BD_SH_2019/principal.php"><button class="btn btn-primary">Voltar</button></a>
+            </div>
         </div>
     </div>
-    <hr>
-    <div class=col-sm-8>
-        <a href="/BD_SH_2019/principal.php"><button class="btn btn-primary">Voltar</button></a>
-    </div>
 
+
+
+    <hr>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
