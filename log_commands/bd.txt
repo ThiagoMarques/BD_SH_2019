@@ -1,2 +1,10 @@
 CREATE DATABASE bd_hospital;
 CREATE TABLE usuario ( id int NOT NULL AUTO_INCREMENT, matricula int NOT NULL, senha int NOT NULL, PRIMARY KEY (id) )default charset = utf8
+CREATE TABLE medico (
+    ID_Med int NOT NULL AUTO_INCREMENT,
+    CRM varchar(30) NOT NULL,
+    FOREIGN KEY (ID_Med) REFERENCES usuario(ID_Usuario),
+    CONSTRAINT ID_Med UNIQUE (ID_Med)
+    );
+                    
+                    

@@ -46,7 +46,7 @@
             <div class="col-sm-8">
                 <fieldset>
                     <legend>Preencha os campos</legend>
-                    <form method="POST" action="../config/insert.php">
+                    <form method="POST" action="../config/update.php">
                         <input type="hidden" name="id" value="<?=$linha['ID_Usuario']?>" required>
                         <div class="form-group">
                             <label for="matricula">Matricula</label>
