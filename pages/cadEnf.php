@@ -27,7 +27,7 @@
     <!---tela de cadastro de usuários-->
     <div class="card">
         <div class="col-sm8">
-            <h2>Enfermeiros</h2>
+            <h2>Enfermeiros Cadastrados</h2>
             <table class="table">
                     <thead>
                         <tr>
@@ -53,8 +53,11 @@
                             <td><?= $linha['Matricula'] ?></td>
                             <td><?= $linha['Nome'] ?></td>
                             <td>
+                            <a href="../config/delete.php?id=<?=$linha['ID_Usuario']?>">
+                                <button class="btn btn-info"
+                                    onclick="return confirm('Confirmar exclusão do registro?')">Excluir</button></a>
                                 <a href="insertCOREN.php?id=<?=$linha['ID_Usuario']?>">
-                                    <button class="btn btn-info">Visualizar</button></a>
+                                    <button class="btn btn-info">Editar</button></a>
                             </td>
     
                         </tr>
