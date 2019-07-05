@@ -30,11 +30,11 @@
                 <fieldset>
                     <legend>Preencha os campos</legend>
                     <form method="POST" action="../config/insert_pac.php">
-                    <div class="form-group">
-                                <label for="data_nasc">Data de Abertura</label>
-                                <input type="date" class="form-control" name="data_abertura" placeholder=""
-                                    value="<?=$linha['data_abertura']?>">
-                            </div>
+                        <div class="form-group">
+                            <label for="data_nasc">Data de Abertura</label>
+                            <input type="date" class="form-control" name="data_abertura" placeholder=""
+                                value="<?=$linha['data_abertura']?>">
+                        </div>
                         <div class="form-group">
                             <label for="nome">Nome Completo</label>
                             <input type="text" class="form-control" name="nome" id="nome" placeholder="Digite o nome">
@@ -69,7 +69,8 @@
                                 <option value='F'>Feminino</option>
                             </select>
                         </div>
-                        <button type="submit" value="Cadastrar" class="btn btn-primary btn-lg btn-block">Registrar Paciente</button>
+                        <button type="submit" value="Cadastrar" class="btn btn-primary btn-lg btn-block">Registrar
+                            Paciente</button>
                     </form>
                 </fieldset>
                 <hr>

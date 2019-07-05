@@ -33,7 +33,7 @@
                         <th scope="col">Código Medicamento</td>
                         <th scope="col">Nome Medicamento</td>
                         <th scope="col">Marca Medicamento</td>
-                        <th scope="col">Qtd Estoque</td>
+                        <th scope="col">Validade</td>
                         <th scope="col">Ações</td>
                     </tr>
                 </thead>
