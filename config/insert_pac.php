@@ -30,10 +30,10 @@ $query = "INSERT INTO paciente (Data_Abertura, Nome, Data_Nasc, Sex, Endereco, T
  */
 
 if(mysqli_query($link, $query)) {
-    $msg = "<script>alert('Registro Inserido'); location = '../pages/geral.php'</script>";
+    $msg = "<script>alert('Registro Inserido'); location = '../pages/geralPac.php'</script>";
     print $msg;
 } else {
-    // $msg = "<script>alert('Erro!'); location = '../pages/geral.php'</script>";
-    // print $msg;
+    $msg = "<script>alert('Erro!'); location = '../pages/geralPac.php'</script>";
+    print $msg;
 }
         

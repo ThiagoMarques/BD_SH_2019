@@ -60,7 +60,7 @@
                         <td><?= $linha['Sex'] ?></td>
                         <td><?= $linha['Data_Abertura'] ?></td>
                         <td>
-                            <a href="../config/delete.php?id=<?=$linha['ID_Pac']?>">
+                            <a href="../config/delete_pac.php?id=<?=$linha['ID_Pac']?>">
                                 <button class="btn btn-info"
                                     onclick="return confirm('Confirmar exclusão do registro?')">Excluir</button></a>
 
