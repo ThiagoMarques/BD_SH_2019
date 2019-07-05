@@ -55,6 +55,13 @@ CREATE TABLE consulta(
     	Data_Consulta DATE,
     	Horario TIME
     );
+CREATE TABLE retorno(
+        ID_Ret int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    	ID_Con int(11) NOT NULL,
+    	Nome_Med varchar(200) NOT NULL,
+    	Data_Consulta DATE,
+    	Horario TIME
+    );
 
 
                     

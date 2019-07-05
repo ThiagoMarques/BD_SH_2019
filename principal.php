@@ -67,7 +67,7 @@
                             aria-expanded="false">Consultas <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="pages/consulta.php">Marcar Consulta</a></li>
-                            <li><a href="#">Marcar Retorno</a></li>
+                            <li><a href="pages/retorno.php">Marcar Retorno</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="pages/geralCon.php">Visualizar Consultas</a></li>
                         </ul>

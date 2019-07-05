@@ -22,10 +22,10 @@ mysqli_select_db($link, "bd_hospital");
  * "INSERT INTO consulta (Nome_Pac, Nome_Med, Data_Consulta, Horario) VALUES ('$p', '$m', '$d', '$h')";
  */
 
-$query = "UPDATE consulta SET Nome_Pac = '$p', Nome_Med = '$m', Data_Consulta = '$d', Horario='$h' WHERE ID_Pac = '$i'";
+$query = "UPDATE consulta SET Nome_Pac = '$p', Nome_Med = '$m', Data_Consulta = '$d', Horario='$h' WHERE ID_Con = '$i'";
 
 if(mysqli_query($link, $query)) {
-    $msg = "<script>alert('Registro Editado'); location='../pages/geral.php'</script>";
+    $msg = "<script>alert('Registro Editado'); location='../pages/geralCon.php'</script>";
     print $msg;
 }
 

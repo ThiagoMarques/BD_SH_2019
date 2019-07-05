@@ -8,6 +8,7 @@
     <title>Login</title>
     <link href="../css/bootstrap.css" rel="stylesheet">
     <link href="../css/signin.css" rel="stylesheet">
+    <link href="../css/signin.css" rel="stylesheet">
 </head>
 
 <body>
@@ -23,47 +24,12 @@
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
-    <!---tela de cadastro de usuários-->
-    <?php
-        //pegar o valor do parametro "id"
-        $id = filter_input(INPUT_GET, 'id');
-        
-        //busca conexão com o banco
-        include_once '../config/conecta.php';
-        mysqli_select_db($link, 'bd_hospital');
-        
-        //CRIA A INSTRUÇÃO SQL (Consultar um registro);
-        $query = "SELECT * FROM hospital WHERE ID_Hos = '$id'";
-        
-        //executa a instrução SQL
-        $result = mysqli_query($link, $query);
-        
-        //Armazena o registro em array (assoc)
-        $linha = mysqli_fetch_assoc($result);
-        ?>
     <div class="card">
         <div class="card-body">
             <div class="col-sm-8">
                 <fieldset>
-                    <legend>Preencha os campos</legend>
-                    <form method="POST" action="../config/update_con.php">
-                        <input type="hidden" name="id" value="<?=$linha['ID_Con']?>" required>
-                        <div class="form-group">
-                            <label for="sex">Selecione o Médico</label>
-                            <?php
-                                    include_once '../config/conecta.php';
-                                    mysqli_select_db($link, "bd_hospital");
-                                    $query = "SELECT u.ID_Usuario, u.Matricula, u.Nome, m.CRM AS CRM from usuario AS u INNER JOIN medico AS m ON u.ID_Usuario = m.ID_Med";
-                                    $result = mysqli_query($link, $query);
-                                    ?>
-                            <select class="form-control" name="medico" id="medico">
-                                <?php 
-                                    while ($linha = mysqli_fetch_assoc($result)) { ?>
-                                        <option value="<?php echo $linha['Nome']?>"><?php echo $linha['Nome']?></option>
-                                <?php } ?>
-                                   
-                            </select>
-                        </div>
+                    <legend>Preencha os Campos para Marcar Retorno</legend>
+                    <form method="POST" action="../config/insert_con.php">
                         <div class="form-group">
                                 <label for="paciente">Selecione o Paciente</label>
                                 <?php
@@ -80,28 +46,40 @@
                                        
                                 </select>
                             </div>
+                            <div class="form-group">
+                            <label for="sex">Selecione o Médico</label>
+                            <?php
+                                    include_once '../config/conecta.php';
+                                    mysqli_select_db($link, "bd_hospital");
+                                    $query = "SELECT u.ID_Usuario, u.Matricula, u.Nome, m.CRM AS CRM from usuario AS u INNER JOIN medico AS m ON u.ID_Usuario = m.ID_Med";
+                                    $result = mysqli_query($link, $query);
+                                    ?>
+                            <select class="form-control" name="medico" id="medico">
+                                <?php 
+                                    while ($linha = mysqli_fetch_assoc($result)) { ?>
+                                        <option value="<?php echo $linha['Nome']?>"><?php echo $linha['Nome']?></option>
+                                <?php } ?>
+                                   
+                            </select>
+                        </div>
                         <div class="form-group">
                             <label for="data">Data</label>
-                            <input type="date" class="form-control" name="data" id="data"  value="<?=$linha['Data_Consulta']?>" required>
+                            <input type="date" class="form-control" name="data" id="data" required>
                         </div>
 
                         <div class="form-group">
                             <label for="hora">Horário</label>
-                            <input type="time" class="form-control" name="hora" id="hora" value="<?=$linha['Horario']?>" required>
+                            <input type="time" class="form-control" name="hora" id="hora" required>
                         </div>
-                        <button type="submit" value="Cadastrar" class="btn btn-primary btn-lg btn-block">Editar Consulta</button>
+                        <button type="submit" value="Cadastrar" class="btn btn-primary btn-lg btn-block">Agendar Retorno</button>
                     </form>
                 </fieldset>
                 <hr>
-                <a href="/BD_SH_2019/principal.php"><button class="btn btn-primary">Voltar</button></a>
+                <a href="/BD_SH_2019/pages/geralCon.php"><button class="btn btn-primary">Voltar</button></a>
             </div>
         </div>
     </div>
-
-
-
     <hr>
-    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">

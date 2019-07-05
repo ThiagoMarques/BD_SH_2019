@@ -55,12 +55,15 @@
                         <td><?= $linha['Data_Consulta'] ?></td>
                         <td><?= $linha['Horario'] ?></td>
                         <td>
+                        <a href="formEditaCon.php?id=<?=$linha['ID_Con']?>">
+                                <button class="btn btn-info">Prescrever Medicação</button></a>
                             <a href="../config/delete_con.php?id=<?=$linha['ID_Con']?>">
                                 <button class="btn btn-info"
                                     onclick="return confirm('Confirmar exclusão do registro?')">Excluir</button></a>
 
                             <a href="formEditaCon.php?id=<?=$linha['ID_Con']?>">
                                 <button class="btn btn-info">Editar</button></a>
+                                
 
                         </td>
 
