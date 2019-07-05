@@ -15,7 +15,12 @@ CREATE TABLE usuario(
         Data_Nasc DATE,
         Sex varchar(1)
     );
-CREATE TABLE usuario ( id int NOT NULL AUTO_INCREMENT, matricula int NOT NULL, senha int NOT NULL, PRIMARY KEY (id) )default charset = utf8
+CREATE TABLE usuario ( 
+    id int NOT NULL AUTO_INCREMENT, 
+    matricula int NOT NULL, 
+    senha int NOT NULL, 
+    PRIMARY KEY (id) 
+    );
 CREATE TABLE medico (
     ID_Med int NOT NULL AUTO_INCREMENT,
     CRM varchar(30) NOT NULL,
@@ -23,7 +28,12 @@ CREATE TABLE medico (
     CONSTRAINT ID_Med UNIQUE (ID_Med)
     );
 
-CREATE TABLE enfermeiro ( ID_Enf int NOT NULL AUTO_INCREMENT, COREN varchar(30) NOT NULL, FOREIGN KEY (ID_Enf) REFERENCES usuario(ID_Usuario), CONSTRAINT ID_Enf UNIQUE (ID_Enf) )
+CREATE TABLE enfermeiro ( 
+    ID_Enf int NOT NULL AUTO_INCREMENT, 
+    COREN varchar(30) NOT NULL, 
+    FOREIGN KEY (ID_Enf) REFERENCES usuario(ID_Usuario), 
+    CONSTRAINT ID_Enf UNIQUE (ID_Enf) 
+    );
 
 select * from usuario where id_usuario not in (select ID_Med from medico )     
 
@@ -36,6 +46,14 @@ CREATE TABLE paciente(
         Endereco varchar(300) NOT NULL,
     	Telefone varchar(300) NOT NULL,
         Email varchar(100) NOT NULL
+    );
+
+CREATE TABLE consulta(
+        ID_Con int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    	Nome_Pac varchar(200) NOT NULL,
+    	Nome_Med varchar(200) NOT NULL,
+    	Data_Consulta DATE,
+    	Horario TIME
     );
 
 
