@@ -96,8 +96,7 @@
                                 ?>
                             </select>
                         </div>
-                        <button type="submit" value="Cadastrar" class="btn btn-primary btn-lg btn-block">Editar
-                            Usuario</button>
+                        <button type="submit" value="Cadastrar" class="btn btn-primary btn-lg btn-block">Inserir Médico</button>
                     </form>
                 </fieldset>
                 <hr>

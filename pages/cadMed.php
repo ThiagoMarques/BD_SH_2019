@@ -53,9 +53,9 @@
                             <td><?= $linha['Matricula'] ?></td>
                             <td><?= $linha['Nome'] ?></td>
                             <td>
-                            <a href="../config/delete.php?id=<?=$linha['ID_Usuario']?>">
+                            <a href="../config/deleteMed.php?id=<?=$linha['ID_Usuario']?>">
                                 <button class="btn btn-info"
-                                    onclick="return confirm('Confirmar exclusão do registro?')">Excluir</button></a>
+                                    onclick="return confirm('Confirmar o desvínculo do médico?')">Excluir</button></a>
                                 <a href="insertCRM.php?id=<?=$linha['ID_Usuario']?>">
                                     <button class="btn btn-info">Editar</button></a>
                             </td>
