@@ -41,9 +41,9 @@
                         </div>
                         <div>
                             <div class="form-group">
-                                <label for="nascimento">Data de Nascimento</label>
-                                <input type="date" class="form-control" name="nascimento" placeholder=""
-                                    value="<?=$linha['nascimento']?>">
+                                <label for="data_nasc">Data de Nascimento</label>
+                                <input type="date" class="form-control" name="data_nasc" placeholder=""
+                                    value="<?=$linha['data_nasc']?>">
                             </div>
                         </div>
                         <div class="form-group">

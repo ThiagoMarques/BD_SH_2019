@@ -1,4 +1,13 @@
 CREATE DATABASE bd_hospital;
+CREATE TABLE usuario(
+        ID_Usuario int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
+        Matricula varchar(180) NOT NULL,
+        Nome varchar(50) NOT NULL,
+        Senha varchar(16) NOT NULL,
+        Email varchar(100) NOT NULL,
+        Data_Nasc DATE,
+        Sex varchar(1)
+    );
 CREATE TABLE usuario ( id int NOT NULL AUTO_INCREMENT, matricula int NOT NULL, senha int NOT NULL, PRIMARY KEY (id) )default charset = utf8
 CREATE TABLE medico (
     ID_Med int NOT NULL AUTO_INCREMENT,
@@ -14,11 +23,11 @@ select * from usuario where id_usuario not in (select ID_Med from medico )
 CREATE TABLE paciente (
     num int NOT NULL AUTO_INCREMENT,
     data_abertira date,
-    nome varchar(30) NOT NULL,
+    nome varchar(200) NOT NULL,
     nascimento date,
     sexo enum('M','F'),
 	endereco varchar(200),
-    telefone varchar(200),
+    telefone varchar(100),
     email varchar(200),
     PRIMARY KEY (num)
     );
