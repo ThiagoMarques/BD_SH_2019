@@ -27,14 +27,13 @@
     <!---tela de cadastro de usuários-->
     <div class="card">
         <div class="col-sm8">
-            <h2>Consultas Marcadas</h2>
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">Paciente</td>
-                        <th scope="col">Médico</td>
-                        <th scope="col">Data</td>
-                        <th scope="col">Horário</td>
+                        <th scope="col">Código Medicamento</td>
+                        <th scope="col">Nome Medicamento</td>
+                        <th scope="col">Marca Medicamento</td>
+                        <th scope="col">Qtd Estoque</td>
                         <th scope="col">Ações</td>
                     </tr>
                 </thead>
@@ -43,25 +42,24 @@
                     <?php
                                 include_once '../config/conecta.php';
                                 mysqli_select_db($link, "bd_hospital");
-                                $query = "SELECT * FROM consulta order by Nome_Pac DESC";
+                                $query = "SELECT * FROM medicamento order by ID_Medicamento DESC";
                                 $result = mysqli_query($link, $query);
                                 if(mysqli_num_rows($result)){
                                    while ($linha = mysqli_fetch_assoc($result)){
                                 ?>
 
                     <tr>
-                        <td><?= $linha['Nome_Pac'] ?></td>
-                        <td><?= $linha['Nome_Med'] ?></td>
-                        <td><?= $linha['Data_Consulta'] ?></td>
-                        <td><?= $linha['Horario'] ?></td>
+                        <td><?= $linha['ID_Medicamento'] ?></td>
+                        <td><?= $linha['Nome_Prod'] ?></td>
+                        <td><?= $linha['Marca_Prod'] ?></td>
+                        <td><?= $linha['Validade'] ?></td>
                         <td>
-                            <a href="../config/delete_con.php?id=<?=$linha['ID_Con']?>">
+                            <a href="../config/deleteMedicamento.php?id=<?=$linha['ID_Medicamento']?>">
                                 <button class="btn btn-info"
                                     onclick="return confirm('Confirmar exclusão do registro?')">Excluir</button></a>
 
-                            <a href="formEditaCon.php?id=<?=$linha['ID_Con']?>">
+                            <a href="formEditaMedicamento.php?id=<?=$linha['ID_Medicamento']?>">
                                 <button class="btn btn-info">Editar</button></a>
-                                
 
                         </td>
 

@@ -72,6 +72,25 @@
                             <li><a href="pages/geralCon.php">Visualizar Consultas</a></li>
                         </ul>
                     </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false">Prescrição <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li role="separator" class="divider"></li>
+                            <li><a href="pages/geralPresc.php">Prescrever Medicamento</a></li>
+                            <li role="separator" class="divider"></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false">Estoque <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="pages/cadMedicamento.php">Cadastrar Medicamentos</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="pages/medicamento.php">Visualizar Medicamentos</a></li>
+                            <li><a href="pages/estoque.php">Visualizar Estoque</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
