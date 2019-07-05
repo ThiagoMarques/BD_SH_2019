@@ -37,7 +37,20 @@
                             <li role="separator" class="divider"></li>
                             <li><a href="pages/cadMed.php">Médicos</a></li>
                             <li><a href="pages/cadEnf.php">Enfermeiros</a></li>
-                            <li><a href="pages/geral.php">Todos os Usuários</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="pages/geral.php">Visualizar Usuários</a></li>
+                            <li role="separator" class="divider"></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false">Paciente <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li role="separator" class="divider"></li>
+                            <li><a href="pages/cadPaciente.php">Cadastrar Paciente</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="pages/geral.php">Visualizar Pacientes</a></li>
+                            <li role="separator" class="divider"></li>
                         </ul>
                     </li>
                     <li class="dropdown">

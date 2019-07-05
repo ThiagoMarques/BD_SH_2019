@@ -9,5 +9,17 @@ CREATE TABLE medico (
 
 CREATE TABLE enfermeiro ( ID_Enf int NOT NULL AUTO_INCREMENT, COREN varchar(30) NOT NULL, FOREIGN KEY (ID_Enf) REFERENCES usuario(ID_Usuario), CONSTRAINT ID_Enf UNIQUE (ID_Enf) )
 
-select * from usuario where id_usuario not in (select ID_Med from medico )            
+select * from usuario where id_usuario not in (select ID_Med from medico )     
+
+CREATE TABLE paciente (
+    num int NOT NULL AUTO_INCREMENT,
+    data_abertira date,
+    nome varchar(30) NOT NULL,
+    nascimento date,
+    sexo enum('M','F'),
+	endereco varchar(200),
+    telefone varchar(200),
+    email varchar(200),
+    PRIMARY KEY (num)
+    );
                     
