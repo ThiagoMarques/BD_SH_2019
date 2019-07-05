@@ -69,7 +69,7 @@
                             <li><a href="pages/consulta.php">Marcar Consulta</a></li>
                             <li><a href="#">Marcar Retorno</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="#">Visualizar Consultas</a></li>
+                            <li><a href="pages/geralCon.php">Visualizar Consultas</a></li>
                         </ul>
                     </li>
                 </ul>

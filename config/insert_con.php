@@ -6,13 +6,9 @@ include_once 'conecta.php';
  */
 
 $p = filter_input(INPUT_POST, 'paciente');
-// echo $p;
- $m = filter_input(INPUT_POST, 'medico');
-// echo $m;
+$m = filter_input(INPUT_POST, 'medico');
 $d = filter_input(INPUT_POST, 'data');
-// echo $d;
 $h = filter_input(INPUT_POST, 'hora');
-// echo $h;
 
 mysqli_select_db($link, "bd_hospital");
 
@@ -28,7 +24,7 @@ $query = "INSERT INTO consulta (Nome_Pac, Nome_Med, Data_Consulta, Horario) VALU
  */
 
 if(mysqli_query($link, $query)) {
-    $msg = "<script>alert('Registro Inserido'); location = '../pages/geral.php'</script>";
+    $msg = "<script>alert('Registro Inserido'); location = '../pages/geralCon.php'</script>";
     print $msg;
 } else {
     // $msg = "<script>alert('Erro!'); location = '../pages/geral.php'</script>";
