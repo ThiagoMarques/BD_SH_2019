@@ -33,7 +33,7 @@
         mysqli_select_db($link, 'bd_hospital');
         
         //CRIA A INSTRUÇÃO SQL (Consultar um registro);
-        $query = "SELECT * FROM usuario WHERE ID_Usuario = '$id'";
+        $query = "SELECT * FROM paciente WHERE ID_Pac = '$id'";
         
         //executa a instrução SQL
         $result = mysqli_query($link, $query);
@@ -46,31 +46,33 @@
             <div class="col-sm-8">
                 <fieldset>
                     <legend>Preencha os campos</legend>
-                    <form method="POST" action="../config/update.php">
-                        <input type="hidden" name="id" value="<?=$linha['ID_Usuario']?>" required>
+                    <form method="POST" action="../config/update_pac.php">
+                        <input type="hidden" name="id" value="<?=$linha['ID_Pac']?>" required>
                         <div class="form-group">
-                            <label for="matricula">Matrícula</label>
-                            <input type="text" class="form-control" name="matricula" id="matricula"
-                            value="<?=$linha['Matricula']?>" required>
-                        </div>
+                                <label for="data_nasc">Data de Abertura</label>
+                                <input type="date" class="form-control" name="data_abertura"  value="<?=$linha['Data_Abertura']?>">
+                            </div>
                         <div class="form-group">
                             <label for="nome">Nome Completo</label>
                             <input type="text" class="form-control" name="nome" id="nome" value="<?=$linha['Nome']?>" required>
                         </div>
-                        <div class="form-group">
-                            <label for="senha">Senha</label>
-                            <input type="password" class="form-control" name="senha" id="senha" value="<?=$linha['Senha']?>" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Endereço de email</label>
-                            <input type="email" class="form-control" name="email" id="email"
-                            value="<?=$linha['Email']?>" required>
-                        </div>
                         <div>
                             <div class="form-group">
                                 <label for="data_nasc">Data de Nascimento</label>
-                                <input type="date" class="form-control" name="data_nasc" value="<?=$linha['Data_Nasc']?>" required>
+                                <input type="date" class="form-control" name="data_nasc" value="<?=$linha['Data_Nasc']?>">
                             </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" class="form-control" name="email" id="email" value="<?=$linha['Email']?>" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="endereco">Endereço</label>
+                            <input type="endereco" class="form-control" name="endereco" id="endereco" value="<?=$linha['Endereco']?>" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefone">Telefone</label>
+                            <input type="phone" class="form-control" name="telefone" id="telefone" value="<?=$linha['Telefone']?>" required>
                         </div>
                         <div class="form-group">
                             <label for="sex">Selecione o sexo</label>
@@ -89,7 +91,7 @@
                             </select>
                         </div>
                         <button type="submit" value="Cadastrar" class="btn btn-primary btn-lg btn-block">Editar
-                            Usuário</button>
+                            Paciente</button>
                     </form>
                 </fieldset>
                 <hr>

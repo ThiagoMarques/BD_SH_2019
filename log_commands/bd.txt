@@ -20,15 +20,16 @@ CREATE TABLE enfermeiro ( ID_Enf int NOT NULL AUTO_INCREMENT, COREN varchar(30) 
 
 select * from usuario where id_usuario not in (select ID_Med from medico )     
 
-CREATE TABLE paciente (
-    num int NOT NULL AUTO_INCREMENT,
-    data_abertira date,
-    nome varchar(200) NOT NULL,
-    nascimento date,
-    sexo enum('M','F'),
-	endereco varchar(200),
-    telefone varchar(100),
-    email varchar(200),
-    PRIMARY KEY (num)
+CREATE TABLE paciente(
+        ID_Pro int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    	Data_Abertura DATE,
+    	Nome varchar(50) NOT NULL,
+    	Data_Nasc DATE,
+    	Sex varchar(1),
+        Endereco varchar(300) NOT NULL,
+    	Telefone varchar(300) NOT NULL,
+        Email varchar(100) NOT NULL
     );
+
+
                     

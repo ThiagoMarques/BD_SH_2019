@@ -64,7 +64,7 @@
                                 <button class="btn btn-info"
                                     onclick="return confirm('Confirmar exclusão do registro?')">Excluir</button></a>
 
-                            <a href="formEdita.php?id=<?=$linha['ID_Pac']?>">
+                            <a href="formEditaPac.php?id=<?=$linha['ID_Pac']?>">
                                 <button class="btn btn-info">Editar</button></a>
 
                         </td>
