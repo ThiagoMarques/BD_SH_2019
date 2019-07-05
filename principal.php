@@ -49,7 +49,7 @@
                             <li role="separator" class="divider"></li>
                             <li><a href="pages/cadPaciente.php">Cadastrar Paciente</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="pages/geral.php">Visualizar Pacientes</a></li>
+                            <li><a href="pages/geralPac.php">Visualizar Pacientes</a></li>
                             <li role="separator" class="divider"></li>
                         </ul>
                     </li>
