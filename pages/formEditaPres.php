@@ -33,7 +33,7 @@
         mysqli_select_db($link, 'bd_hospital');
         
         //CRIA A INSTRUÇÃO SQL (Consultar um registro);
-        $query = "SELECT * FROM consulta WHERE ID_Con = '$id'";
+        $query = "SELECT * FROM prescricao WHERE ID_Pres = '$id'";
         
         //executa a instrução SQL
         $result = mysqli_query($link, $query);
@@ -45,16 +45,17 @@
         <div class="card-body">
             <div class="col-sm-8">
                 <fieldset>
-                    <legend>Prescrição Médica</legend>
+                    <legend>Preencha os campos</legend>
                     <form method="POST" action="../config/update_pres.php">
-                        <input type="hidden" name="id" value="<?=$linha['ID_Con']?>" required>
+                    <input type="hidden" name="id" value="<?=$linha['ID_Pres']?>" required>
+                    
                         <div class="form-group">
                             <label for="medico">Médico Responsável</label>
                             <input readonly="readonly" type="text" class="form-control" name="medico" id="medico"
                             value="<?=$linha['Nome_Med']?>" required>
                         </div>
                         <div class="form-group">
-                            <label for="paciente">Paciente</label>
+                            <label for="medico">Paciente</label>
                             <input readonly="readonly" type="text" class="form-control" name="paciente" id="paciente"
                             value="<?=$linha['Nome_Pac']?>" required>
                         </div>
@@ -68,17 +69,19 @@
                                     ?>
                             <select class="form-control" name="medicamento" id="medicamento">
                                 <?php 
-                                    while ($linha = mysqli_fetch_assoc($result)) { ?>
-                                        <option value="<?php echo $linha['Nome_Prod']?>"><?php echo $linha['Nome_Prod']?></option>
+                                    while ($linha2 = mysqli_fetch_assoc($result)) { ?>
+                                        <option value="<?php echo $linha2['Nome_Prod']?>"><?php echo $linha2['Nome_Prod']?></option>
                                 <?php } ?>
                                    
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="descricao">Descrição</label>
-                            <textarea class="form-control" rows="7" name="descricao" id="descricao" required></textarea>
+                            <label for="medico">Descriçao</label>
+                            <textarea name="descricao" class="form-control" rows="10" cols="90" maxlngth="500" id="descricao"><?=$linha['Descricao']?></textarea>
                         </div>
-                        <button type="submit" value="Cadastrar" class="btn btn-primary btn-lg btn-block">Prescrever Medicaçao</button>
+                        
+                        <button type="submit" value="Cadastrar" class="btn btn-primary btn-lg btn-block">Editar
+                            Prescriçao</button>
                     </form>
                 </fieldset>
                 <hr>
