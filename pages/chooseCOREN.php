@@ -71,7 +71,7 @@
                         <td><?= $linha['Matricula'] ?></td>
                         <td><?= $linha['Nome'] ?></td>
                         <td>
-                            <a href="insertCRM.php?id=<?=$linha['ID_Usuario']?>">
+                            <a href="insertCOREN.php?id=<?=$linha['ID_Usuario']?>">
                                 <button class="btn btn-info">Selecionar</button></a>
                         </td>
 

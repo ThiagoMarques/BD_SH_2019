@@ -49,7 +49,7 @@
             <div class="col-sm-8">
                 <fieldset>
                     <legend>Preencha os campos</legend>
-                    <form method="POST" action="../config/insert_med.php">
+                    <form method="POST" action="../config/insert_enf.php">
                         <input type="hidden" name="id" value="<?=$linha['ID_Usuario']?>" required>
                         <div class="form-group">
                             <label for="matricula">COREN</label>
@@ -96,8 +96,7 @@
                                 ?>
                             </select>
                         </div>
-                        <button type="submit" value="Cadastrar" class="btn btn-primary btn-lg btn-block">Editar
-                            Usuario</button>
+                        <button type="submit" value="Cadastrar" class="btn btn-primary btn-lg btn-block">Inserir Enfermeiro</button>
                     </form>
                 </fieldset>
                 <hr>

@@ -16,7 +16,7 @@ mysqli_select_db($link, "bd_hospital");
  * sintaxe INSERT INTO tabela(campo, campo...) VALUES(v1,v2...)
   */
 
-$query = "INSERT INTO medico (ID_Enf, COREN) VALUES ('$i', '$c')";
+$query = "INSERT INTO enfermeiro (ID_Enf, COREN) VALUES ('$i', '$c')";
 
 /*
  * Verificar se a instrução foi executada
