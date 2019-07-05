@@ -1,4 +1,11 @@
 CREATE DATABASE bd_hospital;
+CREATE TABLE hospital(
+        ID_Hos int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    	CNPJ varchar(15) NOT NULL,
+    	Endereco varchar(300) NOT NULL,
+    	Nome varchar(250) NOT NULL,
+    	Telefone varchar(300) NOT NULL
+    );
 CREATE TABLE usuario(
         ID_Usuario int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
         Matricula varchar(180) NOT NULL,
