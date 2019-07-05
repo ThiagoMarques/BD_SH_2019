@@ -55,11 +55,8 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                             aria-expanded="false">Paciente <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li role="separator" class="divider"></li>
                             <li><a href="pages/cadPaciente.php">Cadastrar Paciente</a></li>
-                            <li role="separator" class="divider"></li>
                             <li><a href="pages/geralPac.php">Visualizar Pacientes</a></li>
-                            <li role="separator" class="divider"></li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -77,6 +74,7 @@
                             aria-expanded="false">Prescrição <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="pages/geralPresc.php">Prescrever Medicamento</a></li> 
+                            <li role="separator" class="divider"></li>
                             <li><a href="pages/prescricoes.php">Visualizar Prescrições</a></li>
                         </ul>
                     </li>
@@ -85,8 +83,9 @@
                             aria-expanded="false">Estoque <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="pages/cadMedicamento.php">Cadastrar Medicamentos</a></li>
-                            <li role="separator" class="divider"></li>
                             <li><a href="pages/medicamento.php">Visualizar Medicamentos</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="pages/cadEstoque.php">Cadastrar Item Estoque</a></li>
                             <li><a href="pages/estoque.php">Visualizar Estoque</a></li>
                         </ul>
                     </li>

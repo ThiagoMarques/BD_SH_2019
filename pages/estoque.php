@@ -43,7 +43,7 @@
                     <?php
                                 include_once '../config/conecta.php';
                                 mysqli_select_db($link, "bd_hospital");
-                                $query = "SELECT * FROM estoque order by ID_Prod DESC";
+                                $query = "SELECT * FROM estoque order by Nome_Prod DESC";
                                 $result = mysqli_query($link, $query);
                                 if(mysqli_num_rows($result)){
                                    while ($linha = mysqli_fetch_assoc($result)){
@@ -56,11 +56,11 @@
                         <td><?= $linha['Data_Movimentacao'] ?></td>
                         <td><?= $linha['Qtd_Estoque'] ?></td>
                         <td>
-                            <a href="../config/delete_prod.php?id=<?=$linha['ID_Prod']?>">
+                            <a href="../config/delete_es.php?id=<?=$linha['ID_Prod']?>">
                                 <button class="btn btn-info"
                                     onclick="return confirm('Confirmar exclusão do registro?')">Excluir</button></a>
 
-                            <a href="formEditaProd.php?id=<?=$linha['ID_Prod']?>">
+                            <a href="formEditaEs.php?id=<?=$linha['ID_Prod']?>">
                                 <button class="btn btn-info">Editar</button></a>
 
                         </td>
